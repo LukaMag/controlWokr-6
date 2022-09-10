@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day</title>
+</head>
+<body>
+<div class="container">
+    <a href="/">Back to the menu</a>
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <#list tasks as task>
+        <tr>
+            <td>${task.name}</td>
+            <td>${task.state}</td>
+            <td>${task.description}</td>
+            <td>
+                <form action="/delete?dayId=number" method="post">
+                    <input name="task" type="hidden" value="${task.name}">
+                <button type="submit" class="align-center">delete</button>
+                </form>
+            </td>
+        </tr>
+        </#list>
+        </tbody>
+    </table></div>
+</body>
+</html>
